@@ -2,18 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Información del Bebé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Bebé</title>
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 500px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .label {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Datos del Bebé</h1>
-    <ul>
-        <li><strong>ID:</strong> {{ bebe.idNeonato }}</li>
-        <li><strong>Fecha Nacimiento:</strong> {{ bebe.Fecha_nacimiento }}</li>
-        <li><strong>Hora Nacimiento:</strong> {{ bebe.Hora_nacimiento }}</li>
-        <li><strong>Peso:</strong> {{ bebe.Peso_g }} g</li>
-        <li><strong>Talla:</strong> {{ bebe.Talla_cm }} cm</li>
-        <li><strong>Género:</strong> {{ bebe.Genero }}</li>
-        <li><strong>Servicio:</strong> {{ bebe.Servicio }}</li>
-    </ul>
+    <div class="card">
+        <h1>Información del Bebé</h1>
+        <ul>
+            <li><span class="label">ID:</span> {{ bebe.idNeonato }}</li>
+            <li><span class="label">Fecha de Nacimiento:</span> {{ bebe.Fecha_nacimiento }}</li>
+            <li><span class="label">Hora de Nacimiento:</span> {{ bebe.Hora_nacimiento }}</li>
+            <li><span class="label">Peso:</span> {{ bebe.Peso_g }} gramos</li>
+            <li><span class="label">Talla:</span> {{ bebe.Talla_cm }} cm</li>
+            <li><span class="label">Género:</span> {{ bebe.Genero }}</li>
+            <li><span class="label">Servicio:</span> {{ bebe.Servicio }}</li>
+        </ul>
+    </div>
 </body>
 </html>

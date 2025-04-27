@@ -26,7 +26,41 @@ def mostrar_bebe():
         bebe = cursor.fetchone()
 
         if not bebe:
-            return "Bebé no encontrado", 404
+            return """
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <title>Bebé no encontrado</title>
+                <style>
+                    body {
+                        background-color: #ffe0e0;
+                        font-family: 'Arial', sans-serif;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-height: 100vh;
+                        margin: 0;
+                        color: #ff4d4d;
+                    }
+                    .message {
+                        font-size: 24px;
+                        text-align: center;
+                        padding: 20px;
+                        background: white;
+                        border-radius: 10px;
+                        box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="message">
+                    <h1>🚫 Bebé no encontrado</h1>
+                    <p>Verifica el código QR o contacta soporte.</p>
+                </div>
+            </body>
+            </html>
+            """, 404
 
         return render_template('bebe.html', bebe=bebe)
 
